@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie de Boas-vindas</title>
+</head>
+<body>
+    <h1>Definir Nome no Cookie</h1>
+    <form action="{{ url_for('definir_cookie') }}" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade">
+        <button type="submit">Salvar em Cookie</button>
+    </form>
+    {% if nome %}
+        <p>Olá, {{ nome }}! Este nome foi salvo em um cookie.</p>
+        <p>Parece que você tem {{ idade }} anos, não é?</p>
+    {% endif %}
+</body>
+</html>
+
